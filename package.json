@@ -1,0 +1,16 @@
+{
+  "devDependencies": {
+    "@types/chai": "^4.2.21",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.7.1",
+    "chai": "^4.3.4",
+    "install": "^0.13.0",
+    "mocha": "^9.1.0",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {},
+  "scripts": {
+    "tests": "mocha -r ts-node/register src/**/*-spec.ts"
+  }
+}

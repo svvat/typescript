@@ -1,0 +1,64 @@
+{
+    "version": "0.2.0",
+    "configurations": [  
+        {
+            "name": "ts-file",
+            "program": "${file}",
+            "type": "node",
+            "request": "launch",
+            "args": [
+                "${relativeFile}"
+            ],
+            "runtimeArgs": [
+                "-r",
+                "ts-node/register"
+            ],
+            "cwd": "${workspaceRoot}",
+            "protocol": "inspector",
+            "internalConsoleOptions": "openOnSessionStart",
+            "resolveSourceMapLocations": [
+                "${workspaceFolder}/**",
+                "!**/node_modules/**"
+            ]
+        },
+        {
+            "name": "ts-main",
+            "program": "${workspaceFolder}/src/main.ts",
+            "type": "node",
+            "request": "launch",
+            "args": [
+                "${relativeFile}"
+            ],
+            "runtimeArgs": [
+                "-r",
+                "ts-node/register"
+            ],
+            "cwd": "${workspaceRoot}",
+            "protocol": "inspector",
+            "internalConsoleOptions": "openOnSessionStart",
+            "resolveSourceMapLocations": [
+                "${workspaceFolder}/**",
+                "!**/node_modules/**"
+            ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Mocha All",
+            "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
+            "args": [
+                "-r",
+                "ts-node/register",
+                "--timeout",
+                "999999",
+                "--colors",
+                "${workspaceFolder}/src/**/*-spec.ts",
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "protocol": "inspector"
+        },
+    ]
+}
+
+
